@@ -1,11 +1,27 @@
 import React from 'react'
 import { animate, motion } from "framer-motion";
 import Typewriter from "typewriter-effect";
-import {BsArrowUpRight} from "react-icons/bs";
-import me from "../assets/logo.png"
+import {BsArrowUpRight,BsChevronDown } from "react-icons/bs";
+import me from "../assets/logo4.png";
+import { useRef } from 'react';
 
 
 const Home = () => {
+
+  const clientCount=useRef(null);
+  const projectCount=useRef(null);
+  const animationClientsCount=()=>{
+animate(0,100,{
+  duration:1,
+  onUpdate:(v)=>(clientCount.current.textContent=v.toFixed()),
+})
+  }
+  const animationProjectsCount=()=>{
+animate(0,500,{
+  duration:1,
+  onUpdate:(v)=>(projectCount.current.textContent=v.toFixed()),
+})
+  }
     const animations = {
         h1: {
           initial: {
@@ -53,23 +69,19 @@ const Home = () => {
             </a>
           </div>
 <article> 
-  <p>
-    +<span>100</span>
+<p>
+    +<motion.span whileInView={animationClientsCount} ref={clientCount}></motion.span>
   </p>
-  <span>Clients worldwide </span>
+  <span>Clients Worldwide</span>
 </article>
 
 
           <aside>
           <article> 
-  <p>
-    +<span>500</span>
-  </p>
+          <p> +     <motion.span  ref={projectCount}whileInView={animationProjectsCount} > 500 </motion.span>  </p>
   <span>Projects Made  </span>
 </article>
-          </aside>
-
-<aside>
+  
   
           <article data-special> 
   <p>  Contact</p>
@@ -77,12 +89,13 @@ const Home = () => {
 </article>
        
 </aside>
-        </div>
+          </div>
       </section>
       <section>
         <img src={me} alt="Vivek Chavan"/>
       </section>
-    
+       <BsChevronDown/>
+
       
     </div>
   )
