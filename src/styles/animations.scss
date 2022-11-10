@@ -3,3 +3,15 @@
         transform: translate(-50%,-100px );
     }
 }
+
+@keyframes upanddown {
+    to {
+      transform: translateY(-5px);
+    }
+  }
+  
+  @keyframes upupdowndown {
+    to {
+      transform: translateY(-10px);
+    }
+  }

@@ -77,7 +77,7 @@ animate(0,500,{
 
 
           <aside>
-          <article> 
+          <article   > 
           <p> +     <motion.span  ref={projectCount}whileInView={animationProjectsCount} > 500 </motion.span>  </p>
   <span>Projects Made  </span>
 </article>

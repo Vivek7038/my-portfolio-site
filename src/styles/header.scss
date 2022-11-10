@@ -24,11 +24,27 @@ a{
     color: $color6;
     font-weight: 500;
     transition: all 0.3s;
+    outline: none;
     letter-spacing: 1px;
     &:hover{
         color: $color3;
     }
     
+    
+}
+>button{
+    border: none;
+    width: 40px;
+    height: 40px;
+    background-color: transparent;
+    color: $color5;
+    font-size: 1.4rem ;
+// display: none;
+
+    &:hover{
+color:$color3;
+
+    }
 }
 
 >a > button{
